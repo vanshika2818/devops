@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         // Change 'yourdockerhubusername' to your actual Docker Hub username
-        DOCKER_IMAGE = 'yourdockerhubusername/devops-dashboard'
+        DOCKER_IMAGE = 'vanshi46/devops-dashboard'
         // This links to the credentials we will set up in Jenkins
         DOCKER_CREDS = credentials('docker-hub-credentials')
     }
