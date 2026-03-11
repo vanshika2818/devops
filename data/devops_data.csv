@@ -1,0 +1,11 @@
+Category,Tool Name,Pricing Type,Features,Pricing Details,Community Support
+Version Control,GitHub,Freemium,Repository hosting, issue tracking, collaboration,Free for public repositories, premium plans for private repos and advanced features,Extensive community, GitHub Community forums, Stack Overflow
+Version Control,GitLab,Freemium,Repository hosting, CI/CD, issue tracking,Free core features, premium for advanced CI/CD and security,Active open-source community, GitLab forums
+CI/CD,Jenkins,Open Source,Automation server, plugins for various integrations,Free,Large community, Jenkins user conferences, extensive documentation
+CI/CD,GitHub Actions,Freemium,CI/CD workflows, integrated with GitHub repos,Free for public repos, paid for private repos usage,Strong community support via GitHub discussions
+Containerization,Docker,Freemium,Container platform, image building and management,Free community edition, paid enterprise features,Active community, Docker forums, DockerCon events
+Containerization,Kubernetes,Open Source,Container orchestration, scaling, management,Free,Strong community, Kubernetes community meetings, CNCF support
+Monitoring,Prometheus,Open Source,Monitoring and alerting, time-series database,Free,Active community, Prometheus user groups, extensive docs
+Monitoring,Grafana,Open Source,Visualization and analytics for metrics,Free open-source version, enterprise for advanced features,Large community, Grafana community forums
+Infrastructure as Code,Terraform,Open Source,Infrastructure provisioning, multi-cloud support,Free,HashiCorp community, Terraform registry
+Infrastructure as Code,Ansible,Open Source,Configuration management, automation,Free,Red Hat community, Ansible Galaxy
