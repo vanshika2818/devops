@@ -4,6 +4,12 @@ const fs = require('fs');
 const csv = require('csv-parser');
 const axios = require('axios'); // Added Axios for API calls
 
+const client = require('prom-client');
+
+// Enable default metric collection (CPU, Memory, etc.)
+const collectDefaultMetrics = client.collectDefaultMetrics;
+collectDefaultMetrics({ register: client.register });
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -85,6 +91,12 @@ app.get('/api/tools', async (req, res) => {
     console.error('Error fetching tools data:', error);
     res.status(500).json({ error: 'Internal server error' });
   }
+});
+
+// Expose the /metrics endpoint for Prometheus to scrape
+app.get('/metrics', async (req, res) => {
+  res.set('Content-Type', client.register.contentType);
+  res.end(await client.register.metrics());
 });
 
 // Start server
