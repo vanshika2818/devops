@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s
+  scrape_timeout: 15s
+
+scrape_configs:
+  - job_name: 'devops-dashboard-cloud'
+    scheme: https
+    static_configs:
+      - targets: ['devops-dashboard-vanshika.onrender.com'] # Put your exact Render URL here
