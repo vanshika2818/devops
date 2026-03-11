@@ -95,3 +95,7 @@ Then build and run:
 docker build -t devops-dashboard .
 docker run -p 3000:3000 devops-dashboard
 ```
+
+## Configuration Management & Testing
+* **Puppet:** The `install_docker.pp` file contains a declarative Puppet manifest to automate the installation and enabling of the Docker engine on an Ubuntu/Debian virtual machine.
+* **Testing:** Run `npm test` locally or in the CI pipeline to verify the integrity of the data source before the application boots.

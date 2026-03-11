@@ -2,9 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const csv = require('csv-parser');
+const axios = require('axios'); // Added Axios for API calls
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 // Enable CORS
 app.use(cors());
@@ -41,13 +42,45 @@ loadCSVData()
     console.error('Error loading CSV data:', error);
   });
 
+// Helper function to fetch live GitHub stars
+async function getGitHubStars(repoPath) {
+  try {
+    const response = await axios.get(`https://api.github.com/repos/${repoPath}`);
+    return response.data.stargazers_count.toLocaleString(); // Adds commas to the number
+  } catch (error) {
+    console.error(`Failed to fetch stars for ${repoPath}`);
+    return 'N/A';
+  }
+}
+
+// Map tool names to their actual GitHub repository paths
+const repoMapping = {
+  'Jenkins': 'jenkinsci/jenkins',
+  'Kubernetes': 'kubernetes/kubernetes',
+  'Prometheus': 'prometheus/prometheus'
+};
+
 // API endpoint to get tools data
-app.get('/api/tools', (req, res) => {
+app.get('/api/tools', async (req, res) => {
   try {
     if (toolsData.length === 0) {
       return res.status(500).json({ error: 'Data not available. Please check if the CSV file exists and is properly formatted.' });
     }
-    res.json(toolsData);
+
+    // Deep clone the array so we don't permanently modify the base CSV data in memory
+    let enrichedTools = JSON.parse(JSON.stringify(toolsData));
+
+    // Loop through our tools and fetch live stars if we have a mapping for them
+    for (let tool of enrichedTools) {
+      const repoPath = repoMapping[tool['Tool Name']];
+      if (repoPath) {
+        const stars = await getGitHubStars(repoPath);
+        // Append the live stars to the end of the features string so it shows on the UI
+        tool['Features'] += `<br><br><span style="color: #e3b341;">★</span> <strong>Live GitHub Stars:</strong> ${stars}`;
+      }
+    }
+
+    res.json(enrichedTools);
   } catch (error) {
     console.error('Error fetching tools data:', error);
     res.status(500).json({ error: 'Internal server error' });
