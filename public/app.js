@@ -41,6 +41,7 @@ function populateDropdowns() {
 }
 
 // Function to render tools
+// Function to render tools
 function renderTools(tools) {
   const container = document.getElementById('toolsContainer');
   container.innerHTML = '';
@@ -58,8 +59,21 @@ function renderTools(tools) {
     card.className = 'card h-100';
 
     const cardHeader = document.createElement('div');
-    cardHeader.className = 'card-header';
-    cardHeader.textContent = tool['Tool Name'];
+    cardHeader.className = 'card-header d-flex justify-content-between align-items-center'; // Added flex for layout
+    
+    // Create Tool Name Span
+    const toolNameSpan = document.createElement('span');
+    toolNameSpan.textContent = tool['Tool Name'];
+    cardHeader.appendChild(toolNameSpan);
+
+    // --- ADD GITHUB STARS HERE ---
+    const starsSpan = document.createElement('span');
+    starsSpan.className = 'badge bg-dark text-warning'; // Dark badge with yellow text
+    // Check if GitHub Stars column exists and has a value, else show NA
+    const stars = tool['GitHub Stars'] || 'NA'; 
+    starsSpan.innerHTML = `⭐ ${stars}`;
+    cardHeader.appendChild(starsSpan);
+    // ------------------------------
 
     const cardBody = document.createElement('div');
     cardBody.className = 'card-body';
