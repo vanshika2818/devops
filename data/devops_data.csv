@@ -1,11 +1,9 @@
-Category,Tool Name,Pricing Type,Features,Pricing Details,Community Support
-Version Control,GitHub,Freemium,Repository hosting, issue tracking, collaboration,Free for public repositories, premium plans for private repos and advanced features,Extensive community, GitHub Community forums, Stack Overflow
-Version Control,GitLab,Freemium,Repository hosting, CI/CD, issue tracking,Free core features, premium for advanced CI/CD and security,Active open-source community, GitLab forums
-CI/CD,Jenkins,Open Source,Automation server, plugins for various integrations,Free,Large community, Jenkins user conferences, extensive documentation
-CI/CD,GitHub Actions,Freemium,CI/CD workflows, integrated with GitHub repos,Free for public repos, paid for private repos usage,Strong community support via GitHub discussions
-Containerization,Docker,Freemium,Container platform, image building and management,Free community edition, paid enterprise features,Active community, Docker forums, DockerCon events
-Containerization,Kubernetes,Open Source,Container orchestration, scaling, management,Free,Strong community, Kubernetes community meetings, CNCF support
-Monitoring,Prometheus,Open Source,Monitoring and alerting, time-series database,Free,Active community, Prometheus user groups, extensive docs
-Monitoring,Grafana,Open Source,Visualization and analytics for metrics,Free open-source version, enterprise for advanced features,Large community, Grafana community forums
-Infrastructure as Code,Terraform,Open Source,Infrastructure provisioning, multi-cloud support,Free,HashiCorp community, Terraform registry
-Infrastructure as Code,Ansible,Open Source,Configuration management, automation,Free,Red Hat community, Ansible Galaxy
+Category,Tool Name,Pricing Type,Features,Pricing Details,Community Support,GitHub Stars
+Version Control,GitHub,Freemium,"Excellent collaboration tools, Copilot integration, native Codespaces.",Free basic. Team: $4/user/mo. Enterprise: $21/user/mo.,"Over 100M developers, massive Stack Overflow presence.",5000
+Version Control,GitLab,Freemium,"All-in-one DevSecOps platform, superior built-in project management.",Free community. Premium: $29/user/mo. Ultimate: $99/user/mo.,"Strong enterprise community, extensive official documentation.",1000
+CI/CD,GitHub Actions,Freemium,"Natively integrated into GitHub, uses YAML, container-native execution.","Free 2,000 compute minutes/mo. Pay-as-you-go after.",Huge Marketplace with thousands of pre-built actions.,6000
+CI/CD,Jenkins,Open Source,"Highly customizable, pipeline-as-code, distributes workloads.",100% Free and Open-Source (you pay for hosting).,"Massive legacy community, over 1,800 plugins available.",7000
+Containerization,Docker,Freemium,Packages apps into isolated containers. Includes Docker Compose.,Free personal/education. Pro: $9/user/mo. Team: $15/user/mo.,Industry standard. Millions of ready-to-use images on Docker Hub.,2200
+Containerization,Kubernetes,Open Source,"Automates deployment, scaling, load balancing, and self-healing.",100% Free and Open-Source (cloud infrastructure costs apply).,Backed by CNCF. Extremely active open-source community.,2500
+Monitoring,Prometheus,Open Source,"Pull-based metrics collection, PromQL, native Kubernetes integration.",100% Free and Open-Source (costs come from your own data storage).,Massive ecosystem of open-source exporters.,1000
+Monitoring,Datadog,Premium,"Push-based SaaS platform, out-of-the-box dashboards, distributed tracing.",Infrastructure starts at $15/host/mo.,"Enterprise-level support, over 600 official integrations.",3000
